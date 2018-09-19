@@ -135,7 +135,7 @@ class Away extends React.Component {
       <FontAwesome
         color={tintColor}
         size={horizontal ? 20 : 30}
-        name="question-circle"
+        name="stop-circle"
       />
     ),
   };
@@ -149,9 +149,30 @@ class Away extends React.Component {
   }
 }
 
+class Other extends React.Component {
+  static navigationOptions = {
+    tabBarIcon: ({ tintColor, horizontal }) => (
+      <FontAwesome
+        color={tintColor}
+        size={horizontal ? 20 : 30}
+        name="question-circle"
+      />
+    ),
+  };
+
+  render() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>🙏</Text>
+      </View>
+    );
+  }
+}
+
 export default createAnimatedTabNavigator({
   Home,
   Away,
+  Other,
 });
 
 const styles = StyleSheet.create({
